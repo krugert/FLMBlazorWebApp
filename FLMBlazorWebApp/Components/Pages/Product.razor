@@ -1,0 +1,149 @@
+﻿@page "/products";
+
+@inject IJSRuntime js
+@inject FLMBlazorWebApp.Interface.IProductService productService
+@using Model = FLMBlazorWebApp.Repositories;
+@inject NavigationManager NavigationManager
+
+<PageTitle>Product</PageTitle>
+
+<h1>Product</h1>
+
+<button type="button" class="btn btn-primary" data-bs-toggle ="modal" data-bs-target="#addProductModal">
+    Add
+</button>
+
+@if (products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Weighted Item</th>
+                <th>Suggested Selling Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in @products)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@(product.WeightedItem == false ? "No" : "Yes")</td>
+                    <td>@product.SuggestedSellingPrice</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal" @onclick="@(e => GetById(@product.Id))">Edit</button> |
+                        <button class="btn btn-sm btn-danger" @onclick="@(e => Delete(@product))">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <EditForm class="needs-validation" method="post" Model="product" OnValidSubmit="Save" FormName="create" Enhance novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">Add Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary class="text-danger" />
+                    <div class="col-md-12">
+                        <label for="id" class="form-label">ID</label>
+                        <InputNumber id="id" @bind-Value="product.Id" class="form-control" required />
+                        <ValidationMessage For="@(() => product.Id)" class="text-danger"></ValidationMessage>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="name" class="form-label">Name</label>
+                        <InputText id="name" @bind-Value="product.Name" class="form-control" required />
+                        <ValidationMessage For="@(() => product.Name)" class="text-danger" />
+                    </div>
+                    <div class="col-12">
+                        <label for="weightedItem" class="form-label">Weighted Item</label>
+                        <InputCheckbox id="weighteditem" @bind-Value="product.WeightedItem" class="form-check-input" />
+                    </div>
+                    <div class="col-12">
+                        <label for="suggestedSellingPrice" class="form-label">Suggested Selling Price</label>
+                        <InputNumber id="suggestedSellingPrice" @bind-Value="product.SuggestedSellingPrice" class="form-control" required />
+                        <ValidationMessage For="() => product.SuggestedSellingPrice" class="text-danger" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private Model.Product product { get; set; } = new();
+
+    IJSObjectReference JsObjectRef { get; set; }
+    private List<Model.Product>? products;
+
+    string Message = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        products = productService.GetProducts();
+    }
+
+    private void GetProducts()
+    {
+        products = productService.GetProducts();
+    }
+
+    public Task Save()
+    {
+        var productObj = new Model.Product();
+        productObj = productService.SaveOrUpdate(product);
+        product = new Model.Product();
+        GetProducts();
+        NavigationManager.NavigateTo("/products");
+
+        return Task.CompletedTask;
+    }
+
+    private void Delete(Model.Product product)
+    {
+        Message = productService.Delete(product.Id);
+        products.RemoveAll(x => x.Id == product.Id);
+    }
+
+    private void GetById(int productId)
+    {
+        product = productService.GetById(productId);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool first)
+    {
+        JsObjectRef = await js.InvokeAsync<IJSObjectReference>("import", "/js/site.js");
+    }
+
+    async Task CloseModal()
+    {
+        //call the js function to close the modal
+        await JsObjectRef.InvokeVoidAsync("CloseModal", "#addProductModal");
+    }
+
+    async Task OpenModal()
+    {
+        //call the js function to close the modal
+        await JsObjectRef.InvokeVoidAsync("OpenModal", "#addProductModal");
+    }
+
+}

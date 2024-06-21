@@ -1,0 +1,141 @@
+﻿@page "/branches";
+
+@inject IJSRuntime js;
+@inject FLMBlazorWebApp.Interface.IBranchService branchService;
+@using Model = FLMBlazorWebApp.Repositories;
+@inject NavigationManager NavigationManager;
+
+<PageTitle>Branch</PageTitle>
+
+<h1>Branch</h1>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBranchModal">
+    Add
+</button>
+
+@if (branches == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Telephone Number</th>
+                <th>Open Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var branch in @branches)
+            {
+                <tr>
+                    <td>@branch.Id</td>
+                    <td>@branch.Name</td>
+                    <td>@branch.TelephoneNumber</td>
+                    <td>@branch.OpenDate.ToShortDateString()</td>
+                    <td>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addBranchModal" @onclick="@(e => GetById(@branch.Id))">Edit</button> |
+                        <button class="btn btn-sm btn-danger" @onclick="@(e => Delete(@branch))">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+     </table>
+}
+<div class="modal fade" id="addBranchModal" tabindex="-1" aria-labelledby="addBranchModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <EditForm class="needs-validation" method="post" Model="branch" OnValidSubmit="Save" FormName="create" Enhance novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBranchModalLabel">Add Branch</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary class="text-danger" />
+                    <div class="col-md-12">
+                        <label for="id" class="form-label">ID</label>
+                        <InputNumber id="id" @bind-Value="branch.Id" class="form-control" required />
+                    </div>
+                    <div class="col-md-12">
+                        <label for="name" class="form-label">Name</label>
+                        <InputText id="name" @bind-Value="branch.Name" class="form-control" required />
+                    </div>
+                    <div class="col-12">
+                        <label for="telephoneNumber" class="form-label">Telephone Number</label>
+                        <InputText id="telephoneNumber" @bind-Value="branch.TelephoneNumber" class="form-control" required />
+                    </div>
+                    <div class="col-12">
+                        <label for="openDate" class="form-label">Open Date</label>
+                        <InputDate id="openDate" @bind-Value="branch.OpenDate" class="form-control" required />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+@code {
+    IJSObjectReference JsObjectRef { get; set; }
+    private List<Model.Branch>? branches;
+    Model.Branch branch = new Model.Branch();
+    string Message = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        branches = branchService.GetBranches();
+    }
+
+    private void GetBranches()
+    {
+        branches = branchService.GetBranches();
+    }
+
+    public Task Save()
+    {
+        var branchObj = new Model.Branch();
+        branchObj = branchService.SaveOrUpdate(branch);
+        branch = new Model.Branch();
+        GetBranches();
+        NavigationManager.NavigateTo("/branches");
+
+        return Task.CompletedTask;
+    }
+
+    private void Delete(Model.Branch branch)
+    {
+        Message = branchService.Delete(branch.Id);
+        branches.RemoveAll(x => x.Id == branch.Id);
+    }
+
+    private void GetById(int branchId)
+    {
+        branch = branchService.GetById(branchId);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool first)
+    {
+        JsObjectRef = await js.InvokeAsync<IJSObjectReference>("import", "/js/site.js");
+    }
+
+    async Task CloseModal()
+    {
+        //call the js function to close the modal
+        await JsObjectRef.InvokeVoidAsync("CloseModal", "#addBranchModal");
+    }
+
+    async Task OpenModal()
+    {
+        //call the js function to close the modal
+        await JsObjectRef.InvokeVoidAsync("OpenModal", "#addBranchModal");
+    }
+}

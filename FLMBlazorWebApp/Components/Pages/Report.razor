@@ -1,0 +1,38 @@
+﻿@page "/reports";
+
+@inject FLMBlazorWebApp.Interface.IReportService reportService
+@using Model = FLMBlazorWebApp.Repositories;
+
+<PageTitle>Reports</PageTitle>
+
+@if (reports == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table>
+        <tr>
+            <th>Branch</th>
+            <th>Products</th>
+        </tr>
+        @foreach (var report in reports)
+        {
+            <tr>
+
+                <td>@report.BranchName</td>
+                <td>@report.ProductNames</td>
+
+            </tr>
+        }
+    </table>
+}
+
+@code {
+    IEnumerable<Repositories.Report> reports;
+
+    protected override async Task OnInitializedAsync()
+    {
+        reports = await reportService.GetProductsByBranch();
+    }
+}

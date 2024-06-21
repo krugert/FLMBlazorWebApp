@@ -1,0 +1,60 @@
+﻿[
+  {
+    "ID": 1001,
+    "Name": "EC CTX MOSSELBAAI",
+    "TelephoneNumber": "613 896-7571",
+    "OpenDate": "1998/03/22"
+  },
+  {
+    "ID": 1002,
+    "Name": "LIM CTX CLB GARAGE",
+    "TelephoneNumber": "(411) 9688009",
+    "OpenDate": "2017/03/18"
+  },
+  {
+    "ID": 1003,
+    "Name": "NC ML KIMBERLEY",
+    "TelephoneNumber": "(211)585-3908",
+    "OpenDate": "1995/04/20"
+  },
+  {
+    "ID": 1004,
+    "Name": "KZN CTX ST LUCIA",
+    "TelephoneNumber": "363918-2764",
+    "OpenDate": "1998/11/02"
+  },
+  {
+    "ID": 1005,
+    "Name": "GP CTX MARLANDS",
+    "TelephoneNumber": "",
+    "OpenDate": "2014/06/03"
+  },
+  {
+    "ID": 1006,
+    "Name": "GP CTX UNIVERSAL",
+    "OpenDate": "1995/04/19"
+  },
+  {
+    "ID": 1007,
+    "Name": "WC CTX V&A WATERFRONT",
+    "TelephoneNumber": 6444779925,
+    "OpenDate": "1992/10/14"
+  },
+  {
+    "ID": 1008,
+    "Name": "KZN CTX KINGSWAY",
+    "TelephoneNumber": "+27157457109",
+    "OpenDate": ""
+  },
+  {
+    "ID": 1009,
+    "Name": "GN FLM THE MARC EATERY",
+    "TelephoneNumber": "783-201-6764",
+    "OpenDate": "1991/03/29"
+  },
+  {
+    "ID": 1010,
+    "Name": "WC CTX PHAMBILI",
+    "TelephoneNumber": "541 3163420"
+  }
+]

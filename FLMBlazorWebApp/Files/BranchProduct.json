@@ -1,0 +1,301 @@
+﻿[
+ {
+   "BranchID": 1001,
+   "ProductID": 48798
+ },
+ {
+   "BranchID": 1001,
+   "ProductID": 48807
+ },
+ {
+   "BranchID": 1001,
+   "ProductID": 49817
+ },
+ {
+   "BranchID": 1001,
+   "ProductID": 55666
+ },
+ {
+   "BranchID": 1001,
+   "ProductID": 53312
+ },
+ {
+   "BranchID": 1001,
+   "ProductID": 54883
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 55239
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 48799
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 48807
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 50258
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 39926
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 55662
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 53106
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 53312
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 54177
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 55841
+ },
+ {
+   "BranchID": 1002,
+   "ProductID": 55842
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 48798
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 48800
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 48805
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 48816
+ },
+ {
+   "BranchID": 0,
+   "ProductID": 2419
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 39927
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 55662
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 55745
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 53115
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 53330
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 54177
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 55841
+ },
+ {
+   "BranchID": 1005,
+   "ProductID": 57608
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 400
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 55239
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48797
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48798
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48799
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48800
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48801
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48805
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48806
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48807
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 48816
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 50258
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 2419
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 6147
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 6380
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 39926
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 39927
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 49817
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 55661
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 55662
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 55665
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 55666
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 55745
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 53106
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 53114
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 53115
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 53312
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 53330
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 53331
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 54177
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 54874
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 54883
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 55841
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 55842
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 57608
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 57609
+ },
+ {
+   "BranchID": 1007,
+   "ProductID": 58837
+ },
+ {
+   "BranchID": 1009,
+   "ProductID": 48797
+ },
+ {
+   "BranchID": 1009,
+   "ProductID": 48800
+ },
+ {
+   "BranchID": 1009
+ },
+ {
+   "BranchID": 1009,
+   "ProductID": 6147
+ },
+ {
+   "BranchID": 1009,
+   "ProductID": 55665
+ },
+ {
+   "BranchID": 1009,
+   "ProductID": 53115
+ },
+ {
+   "BranchID": 1009,
+   "ProductID": 54874
+ },
+ {
+   "BranchID": 1009,
+   "ProductID": 58837
+ }
+]

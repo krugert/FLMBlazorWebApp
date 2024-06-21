@@ -1,0 +1,222 @@
+﻿[
+  {
+    "ID": 400,
+    "Name": "TOFFEE APPLES",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 1
+  },
+  {
+    "ID": 55239,
+    "Name": "KOSHER 1LT SOUP",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 113.99
+  },
+  {
+    "ID": 48797,
+    "Name": "FLM MIXED APPELS 8 CUP",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 249.99
+  },
+  {
+    "ID": 48798,
+    "Name": "FLM GRANNY SMITH 8 CUP",
+    "WeightedItem": "N"
+  },
+  {
+    "ID": 48799,
+    "Name": "FLM STARKING 8 CUP",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 199.99
+  },
+  {
+    "ID": 48800,
+    "Name": "FLM TOP RED 8 CUP",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 159.99
+  },
+  {
+    "ID": 48801,
+    "Name": "FLM BRAEBURN 8 CUP",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 159.99
+  },
+  {
+    "ID": 48805,
+    "Name": "FLM FUJI 8 CUP",
+    "SuggestedSellingPrice": 49.99
+  },
+  {
+    "ID": 48806,
+    "Name": "FLM GOLDEN DELICIOUS 8 CUP",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 19.99
+  },
+  {
+    "ID": 48807,
+    "Name": "FLM CRISPPS RED 8 CUP",
+    "WeightedItem": "0",
+    "SuggestedSellingPrice": 19.99
+  },
+  {
+    "ID": 48816,
+    "Name": "FLM CRISPPS PINK 8 CUP",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 24.99
+  },
+  {
+    "ID": 50258,
+    "Name": "FLM ROYAL GALA 8 CUP",
+    "WeightedItem": "",
+    "SuggestedSellingPrice": 42.49
+  },
+  {
+    "ID": 2419,
+    "Name": "BISCUITS",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 9.99
+  },
+  {
+    "ID": 6147,
+    "Name": "DOUGH",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 9.99
+  },
+  {
+    "ID": 6380,
+    "Name": "MULTI GRAN MIX",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 9.99
+  },
+  {
+    "ID": 39926,
+    "Name": "DOUGH SWEET PASTRY LARGE",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 9.99
+  },
+  {
+    "ID": 39927,
+    "Name": "DOUGH SWEET PASTRY SMALL",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 9.99
+  },
+  {
+    "ID": 49817,
+    "Name": "MYOMY PITA POCKET WHITE 5S",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 25.49
+  },
+  {
+    "ID": 55661,
+    "Name": "MYOMY LARGE WHTE ROTI 10S",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 99.99
+  },
+  {
+    "ID": 55662,
+    "Name": "MYOMY SMALL WHT ROTI  5S",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 26.95
+  },
+  {
+    "ID": 55665,
+    "Name": "MYOMY P/BASE BITES SQUARE  30S",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 19.95
+  },
+  {
+    "ID": 55666,
+    "Name": "MYOMY P/BASE MINI ROUND 10S",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 19.95
+  },
+  {
+    "ID": 55745,
+    "Name": "MYOMY P/BASE MEDIUM ROUND 4S",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 19.95
+  },
+  {
+    "ID": 53106,
+    "Name": "FOL BARRACOUTA HEADED & GUTTED",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 29.99
+  },
+  {
+    "ID": 53114,
+    "Name": "FOL MILD CURED SNOEK",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 44.99
+  },
+  {
+    "ID": 53115,
+    "Name": "FOL SMOKED SNOEK 1KG",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 79.99
+  },
+  {
+    "ID": 53312,
+    "Name": "BRECO MACKERAL PEPPERED",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 109.99
+  },
+  {
+    "ID": 53330,
+    "Name": "BRECO SNOEK MILD CURE (L)",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 44.99
+  },
+  {
+    "ID": 53331,
+    "Name": "BRECO SMOKED SNOEK",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 79.99
+  },
+  {
+    "ID": 54177,
+    "Name": "F/L MAASBANKER W/RND 25",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 1
+  },
+  {
+    "ID": 54874,
+    "Name": "BLUE A SNOEK MILD CURED",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 39.99
+  },
+  {
+    "ID": 54883,
+    "Name": "BLUE A SNOEK SMOKED BOX 500G",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 44.99
+  },
+  {
+    "ID": 55841,
+    "Name": "F/L OAK SMOKD SNOEK 1KG",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 69.99
+  },
+  {
+    "ID": 55842,
+    "Name": "F/L BRAAI SNOEK 1KG",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 59.99
+  },
+  {
+    "ID": 57608,
+    "Name": "BRAAI SNOEK 900G",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 79.99
+  },
+  {
+    "ID": 57609,
+    "Name": "BRECO OAK SMOKED SNOEK 1KG",
+    "WeightedItem": "N",
+    "SuggestedSellingPrice": 89.99
+  },
+  {
+    "ID": 58837,
+    "Name": "PESC SNOEK MILD CURED",
+    "WeightedItem": "Y",
+    "SuggestedSellingPrice": 41.99
+  }
+]

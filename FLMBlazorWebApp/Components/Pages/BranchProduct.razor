@@ -1,0 +1,153 @@
+﻿@page "/branch-product";
+
+@inject FLMBlazorWebApp.Interface.IBranchService branchService
+@inject FLMBlazorWebApp.Interface.IProductService productService
+@inject FLMBlazorWebApp.Interface.IBranchProductService branchProductService
+@using Model = FLMBlazorWebApp.Repositories;
+@inject NavigationManager NavigationManager;
+
+<PageTitle>Add Branch to Product</PageTitle>
+
+<h1>Add Branch to Product</h1>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBranchProductModal">
+    Add
+</button>
+
+<div class="modal fade" id="addBranchProductModal" tabindex="-1" aria-labelledby="addBranchProductModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <EditForm class="needs-validation" method="post" Model="branchProduct" OnValidSubmit="Save" FormName="create" Enhance novalidate>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBranchModalLabel">Add Branch to Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <label for="branchName" class="form-label">Branch Name</label>
+                        <select id="branchName" class="form-select" name="dropDownBranch" @bind="selectedBranch">
+                            @foreach (var branch in @branches)
+                            {
+                                <option value="@branch.Id">@branch.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="productName" class="form-label">Product Name</label>
+                        <select id="productName" @onchange="SelectedProductsChanged" multiple name="dropDownProduct">
+                            @foreach (var product in @products)
+                            {
+                                <option value="@product.Id">@product.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <label for="branchName" class="form-label">Branch Name</label>
+        <select id="branchName" class="form-select" name="dropDownBranch" @bind="selectedBranchMain">
+            @foreach (var branch in @branches)
+            {
+                <option value="@branch.Id">@branch.Name</option>
+            }
+        </select>
+    </div>
+</div>
+
+@if (selectedBranchMain == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Weighted Item</th>
+                <th>Suggested Selling Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in @branchProductService.GetProductsByBranchId(Convert.ToInt32(selectedBranchMain)))
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@(product.WeightedItem == false ? "No" : "Yes")</td>
+                    <td>@product.SuggestedSellingPrice</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Model.Branch>? branches;
+    Model.Branch branch = new Model.Branch();
+    private List<Model.Product>? products;
+    Model.Product product = new Model.Product();
+    private List<Model.BranchProduct>? branchProducts;
+    Model.BranchProduct branchProduct = new Model.BranchProduct();
+    public string? selectedBranch;
+    public string? selectedBranchMain;
+    public string[] SelectedProducts { get; set; } = new string[] { };
+    string Message = "";
+
+    private void SelectedProductsChanged(ChangeEventArgs e)
+    {
+        if (e.Value is not null)
+        {
+            SelectedProducts = (string[])e.Value;
+        }
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        branches = branchService.GetBranches();
+        products = productService.GetProducts();
+    }
+
+    private void GetBranches()
+    {
+        branches = branchService.GetBranches();
+    }
+
+    private void GetProducts()
+    {
+        products = productService.GetProducts();
+    }
+
+    public Task Save()
+    {
+        var branchProductObj = new Model.BranchProduct();
+        branchProduct = new Model.BranchProduct();
+
+        branchProduct.BranchId = Convert.ToInt32(selectedBranch);
+
+        foreach (var value in SelectedProducts)
+        {
+            branchProduct.ProductId = Convert.ToInt32(value);
+            branchProductObj = branchProductService.SaveOrUpdate(branchProduct);
+        }
+
+        GetBranchProducts();
+        NavigationManager.NavigateTo("/branch-product");
+
+        return Task.CompletedTask;
+    }
+
+    private void GetBranchProducts()
+    {
+        branchProducts = branchProductService.GetBranchProducts();
+    }
+}

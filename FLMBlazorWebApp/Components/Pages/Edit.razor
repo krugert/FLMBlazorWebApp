@@ -1,0 +1,30 @@
+﻿@page "/branches/edit"
+@using FLMBlazorWebApp.Repositories;
+@inject NavigationManager NavigationManager
+
+<PageTitle>Edit</PageTitle>
+
+<h1>Edit</h1>
+
+<h4>Branch</h4>
+<hr />
+@if (branch is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    
+}
+
+<div>
+    <a href="/branches">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    public int Id { get; set; }
+
+    [SupplyParameterFromForm]
+    public Branch? branch { get; set; }
+}

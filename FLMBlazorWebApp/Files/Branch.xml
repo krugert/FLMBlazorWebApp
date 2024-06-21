@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<Branches>
+	<Branch ID="1001" Name="EC CTX MOSSELBAAI" TelephoneNumber="613 896-7571" OpenDate="1998/03/22"></Branch>
+	<Branch ID="1002" Name="LIM CTX CLB GARAGE" OpenDate="2017/03/18"></Branch>
+	<Branch ID="1003" Name="NC ML KIMBERLEY" TelephoneNumber="(211)585-3908"></Branch>
+	<Branch ID="1004" Name="KZN CTX ST LUCIA" TelephoneNumber="363918-2764" OpenDate="1998/11/02"></Branch>
+	<Branch ID="1005" Name="GP CTX MARLANDS" TelephoneNumber="(542) 810-1276" OpenDate="2014/06/03"></Branch>
+	<Branch ID="1006" Name="GP CTX UNIVERSAL" TelephoneNumber="(367)3111620" OpenDate=""></Branch>
+	<Branch ID="1007" Name="WC CTX V&amp;A WATERFRONT" TelephoneNumber="6444779925" OpenDate="1992/10/14"></Branch>
+	<Branch ID="1008" Name="KZN CTX KINGSWAY" TelephoneNumber="+27157457109" OpenDate="2006/02/12"></Branch>
+	<Branch ID="1009" Name="GN FLM THE MARC EATERY" TelephoneNumber="783-201-6764" OpenDate="1991/03/29"></Branch>
+	<Branch ID="1010" Name="WC CTX PHAMBILI" TelephoneNumber="" OpenDate="2008/06/16"></Branch>
+</Branches>
